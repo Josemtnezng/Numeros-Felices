@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Felices - Mario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="music-btn" class="music-btn">🎵</button>
+
+    <!-- Div donde se cargará el reproductor de YouTube -->
+    <div id="youtube-player"></div>
+
+    <main class="container">
+        <div class="card">
+            <img src="https://mario.nintendo.com/static/952b701df4a019bd5ca103dde786eb59/a320e/mario.png" alt="Sprite de Super Mario" class="mario-sprite">
+            
+            <h1 class="card-title">Número Feliz?</h1>
+            <p class="card-description">
+                ¡It's-a-me, Mario! Introduce un número para ver si es feliz. ¡Wahoo!
+            </p>
+            
+            <div class="input-group">
+                <input type="number" id="number-input" placeholder="Ej: 7" min="1">
+                <button id="check-btn">¡Vamos!</button>
+            </div>
+
+            <div id="result-container" class="result-container">
+                <!-- El resultado aparecerá aquí -->
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

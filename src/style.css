@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Usamos la fuente pixelada en todo el body */
+body {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #5c94fc; /* Azul cielo de Mario */
+    color: #ffffff;
+    padding: 20px;
+    image-rendering: pixelated; /* Mantiene los bordes pixelados nítidos */
+    overflow: hidden; /* Evita barras de scroll por el botón de música */
+}
+
+/* Botón de música */
+.music-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #FAC800;
+    border: 3px solid black;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 0px 0px #a15c00;
+    z-index: 10;
+}
+.music-btn:active {
+    transform: translateY(2px);
+    box-shadow: inset -1px -1px 0px 0px #a15c00;
+}
+
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Sprite de Mario */
+.mario-sprite {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Tarjeta principal - Estilo bloque de ladrillos */
+.card {
+    background-color: #d97a00; /* Marrón ladrillo */
+    padding: 24px;
+    border: 4px solid black;
+    box-shadow: 
+        inset -4px -4px 0px 0px #a15c00, 
+        inset 4px 4px 0px 0px #ff9d2b;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 2px 2px 0 #000000;
+    margin-bottom: 16px;
+}
+
+.card-description {
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    text-shadow: 1px 1px 0 #000000;
+}
+
+/* --- SECCIÓN MODIFICADA --- */
+/* Grupo de entrada y botón */
+.input-group {
+    display: flex;
+    /* 1. Cambiamos la dirección para apilar los elementos verticalmente */
+    flex-direction: column;
+    /* 2. Centramos los elementos horizontalmente */
+    align-items: center;
+    gap: 15px; /* Aumentamos un poco el espacio entre el input y el botón */
+    margin-bottom: 24px;
+}
+
+/* Input - Estilo bloque oscuro */
+#number-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 4px solid black;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    box-shadow: inset 2px 2px 0px 0px #555;
+    /* 3. Hacemos que el input ocupe todo el ancho para que se vea bien */
+    width: 100%;
+    text-align: center; /* Centramos el texto dentro del input */
+}
+
+#number-input::placeholder {
+    color: #999;
+}
+
+#number-input:focus {
+    outline: none;
+    background-color: #222;
+}
+
+#number-input::-webkit-outer-spin-button,
+#number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#number-input {
+  -moz-appearance: textfield;
+}
+
+/* Botón - Estilo tubo verde */
+#check-btn {
+    background-color: #39b54a; /* Verde tubo */
+    color: #ffffff;
+    border: 4px solid black;
+    padding: 12px 24px; /* Ajustamos el padding para que sea más ancho */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    cursor: pointer;
+    text-shadow: 2px 2px 0 #000000;
+    box-shadow: 
+        inset -4px -4px 0px 0px #2a8f3a, 
+        inset 4px 4px 0px 0px #6ce67c;
+    transition: transform 0.1s, box-shadow 0.1s;
+    width: 70%; /* Le damos un ancho fijo para que no sea tan pequeño */
+}
+
+#check-btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+        inset -2px -2px 0px 0px #2a8f3a, 
+        inset 2px 2px 0px 0px #6ce67c;
+}
+
+/* Contenedor de resultados - Estilo caja de texto del juego */
+.result-container {
+    text-align: left;
+    padding: 16px;
+    border: 4px solid #fff;
+    background-color: #000;
+    min-height: 100px;
+    box-shadow: 0 0 0 4px #000;
+}
+
+.result-message {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.result-message.happy {
+    color: #FAC800; /* Amarillo moneda/estrella */
+}
+
+.result-message.unhappy {
+    color: #E52521; /* Rojo de Mario */
+}
+
+.result-sequence {
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.result-sequence strong {
+    color: #5c94fc; /* Azul para resaltar */
+}
